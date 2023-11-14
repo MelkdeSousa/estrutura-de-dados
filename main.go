@@ -1,10 +1,9 @@
 package main
 
+import (
+	"github.com/melkdesousa/estrutura-de-dados/examples"
+)
 
 func main() {
-	p := New[int]()
-
-	number := 10
-
-	for number <
+	examples.DecToBin(172)
 }

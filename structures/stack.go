@@ -1,11 +1,13 @@
-package main
+package structures
 
 import "errors"
 
 type Stack[T any] []T
 
-func New[T any]() Stack[T] {
-	return make(Stack[T], 0)
+// NewStack creates a new stack of type T
+func NewStack[T any]() Stack[T] {
+	s := make(Stack[T], 0)
+	return s
 }
 
 func (s *Stack[T]) Push(valor T) {
@@ -14,7 +16,9 @@ func (s *Stack[T]) Push(valor T) {
 
 func (s *Stack[T]) Pop() (T, error) {
 	if len(*s) == 0 {
-		return T{}, errors.New("empty stack")
+		var v T
+
+		return v, errors.New("empty stack")
 	}
 
 	topo := (*s)[len(*s)-1]
