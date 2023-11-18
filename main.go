@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	examples.DecToBin(172)
+	examples.BankQueue()
 }
