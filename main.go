@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	examples.BankQueue()
+	examples.ShoppingList()
 }
