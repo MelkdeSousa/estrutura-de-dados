@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "simply_linked_list.h"
-#include "node.h"
 
-void createSimplyLinkedList(SimplyLinkedList *list)
+SimplyLinkedList *createSimplyLinkedList()
 {
+    SimplyLinkedList *list = (SimplyLinkedList *)malloc(sizeof(SimplyLinkedList));
+
     list->head = NULL;
+
+    return list;
 }
 
 void push(SimplyLinkedList *list, int data)
@@ -21,12 +24,12 @@ void push(SimplyLinkedList *list, int data)
 
     Node *current = list->head;
 
-    while (current->next != NULL)
+    while (getNextNode(current) != NULL)
     {
-        current = current->next;
+        current = getNextNode(current);
     }
 
-    current->next = node;
+    setNextNode(current, node);
     return;
 }
 
@@ -39,7 +42,7 @@ int pop(SimplyLinkedList *list)
 
     int data = current->data;
 
-    list->head = current->next;
+    list->head = getNextNode(current);
 
     free(current);
 
@@ -60,6 +63,7 @@ void printSimplyLinkedList(SimplyLinkedList list)
     while (current != NULL)
     {
         printf("%d ", current->data);
+        current = getNextNode(current);
     }
 
     printf("\n");
