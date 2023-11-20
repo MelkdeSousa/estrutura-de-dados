@@ -5,5 +5,8 @@ import (
 )
 
 func main() {
-	examples.ShoppingList()
+	examples.SuperDecToBin(172)
+	examples.SuperDecToBin(10)
+	examples.SuperDecToBin(0)
+	examples.SuperDecToBin(1)
 }
