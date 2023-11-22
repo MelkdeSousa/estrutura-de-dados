@@ -54,7 +54,7 @@ func (list *SimplyLinkedList[T]) Pop() (T, error) {
 
 func (list SimplyLinkedList[T]) String() string {
 	if list.Head == nil {
-		return ""
+		return "[]"
 	}
 
 	current := list.Head
