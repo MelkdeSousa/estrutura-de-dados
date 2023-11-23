@@ -3,7 +3,7 @@ package simplylinkedlist
 
 type Node[T any] struct {
 	Value T
-	Next  *Node[T] // pointer to the next node
+	Next  *Node[T]
 }
 
 func NewNode[T any](value T) *Node[T] {

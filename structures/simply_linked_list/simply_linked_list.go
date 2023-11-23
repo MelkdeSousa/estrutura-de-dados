@@ -52,6 +52,32 @@ func (list *SimplyLinkedList[T]) Pop() (T, error) {
 	return element, nil
 }
 
+func swap[T any](a, b *Node[T]) {
+	a.Value, b.Value = b.Value, a.Value
+}
+
+func (list *SimplyLinkedList[T]) BubbleSort(maximumFunc func(a, b T) bool) {
+	current := list.Head
+
+	for list.IsEmpty() {
+		return
+	}
+
+	for current != nil {
+		next := current.GetNext()
+
+		for next != nil {
+			if maximumFunc(current.Value, next.Value) {
+				swap(current, next)
+			}
+
+			next = next.GetNext()
+		}
+
+		current = current.GetNext()
+	}
+}
+
 func (list SimplyLinkedList[T]) String() string {
 	if list.Head == nil {
 		return "[]"
