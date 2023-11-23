@@ -68,3 +68,38 @@ void printSimplyLinkedList(SimplyLinkedList list)
 
     printf("\n");
 }
+
+void swap(Node *a, Node *b)
+{
+    int temp = a->data;
+    a->data = b->data;
+    b->data = temp;
+}
+
+void bubbleSort(SimplyLinkedList *list)
+{
+    Node *current = list->head;
+
+    if (isEmpty(*list))
+    {
+        return;
+    }
+
+    while (current != NULL)
+    {
+        Node *next = getNextNode(current);
+
+        while (next != NULL)
+        {
+
+            if (current->data > next->data)
+            {
+                swap(current, next);
+            }
+
+            next = getNextNode(next);
+        }
+
+        current = getNextNode(current);
+    }
+}

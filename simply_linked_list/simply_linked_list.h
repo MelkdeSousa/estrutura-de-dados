@@ -47,3 +47,10 @@ void printSimplyLinkedList(SimplyLinkedList list);
  *
  * list: The list to be printed.
  */
+
+void bubbleSort(SimplyLinkedList *list);
+/*
+ * Sorts the elements of the simply linked list using bubble sort.
+ *
+ * list: The list to be sorted.
+ */
