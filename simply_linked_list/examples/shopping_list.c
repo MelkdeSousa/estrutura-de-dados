@@ -14,7 +14,6 @@ int main(int argc, char const *argv[])
 
     printf("Original list:\n");
     printSimplyLinkedList(*list);
-    bubbleSort(list);
 
     printf("Sorted list:\n");
     printSimplyLinkedList(*list);
